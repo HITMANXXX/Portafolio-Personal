@@ -906,7 +906,7 @@ span {
   }
 
   .home .profession-box .profession:nth-child(1) {
-    transform: rotate(-120deg) translate(-160px, -245px);
+    transform: rotate(-120deg) translate(-173px, -240px);
   }
 
   .home .profession-box .profession:nth-child(1) i {
@@ -930,7 +930,7 @@ span {
   }
   
   .home .profession-box .profession:nth-child(3) {
-    transform: rotate(-240deg) translate(-140px, -405px);
+    transform: rotate(-240deg) translate(-150px, -410px);
   }
 
   .contact form .input-box input {
