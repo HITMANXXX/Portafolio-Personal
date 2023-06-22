@@ -19,9 +19,9 @@
   --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
-.dark-mode{
+.dark-mode {
   --bg-color: #0b061f;
-  --text-color: #fdfdfd;  
+  --text-color: #fdfdfd;
   --shadow-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -183,6 +183,26 @@ section {
   border-color: var(--main-color);
 }
 
+.popup-btn {
+  display: inline-block;
+  padding: 1.2rem 2.8rem;
+  background: var(--main-color);
+  border-radius: 0.6rem;
+  box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
+  font-size: 1.6rem;
+  color: var(--white-color);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  border: 0.2rem solid transparent;
+  transition: 0.5s ease;
+}
+
+.popup-btn:hover {
+  background: transparent;
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+
 /*profession*/
 .home .profession-container {
   position: absolute;
@@ -208,20 +228,23 @@ section {
   animation: professionRotate 10s ease-out infinite;
 }
 
-@keyframes professionRotate{
-   0%,20%{
+@keyframes professionRotate {
+  0%,
+  20% {
     transform: rotate(0deg);
-   }
-   25%,45%{
+  }
+  25%,
+  45% {
     transform: rotate(-120deg);
-   }
-   50%,70%{
+  }
+  50%,
+  70% {
     transform: rotate(-240deg);
-   }
-   75%,100%{
+  }
+  75%,
+  100% {
     transform: rotate(-360deg);
-   }
-    
+  }
 }
 
 .home .profession-box .profession {
@@ -679,8 +702,7 @@ span {
 }
 
 @media (max-width: 991px) {
-  .navbar a:nth-child(1)
-   {
+  .navbar a:nth-child(1) {
     color: var(--main-color);
   }
 
@@ -827,11 +849,10 @@ span {
     transform: rotate(0deg) translate(0px, -330px);
     margin-right: 3rem;
   }
-  
+
   .home .profession-box .profession:nth-child(3) {
     transform: rotate(-240deg) translate(-155px, -415px);
   }
-
 
   .home .profession-box .circle {
     position: fixed;
@@ -840,7 +861,6 @@ span {
     z-index: -1;
   }
 
-  
   .home .profession-container .overlay {
     position: fixed;
     top: 70rem;
@@ -902,23 +922,23 @@ span {
   }
 
   .home {
-    padding: 0 3% 30rem;
+    padding: 0 3% 35rem;
   }
 
   .home .profession-box .profession:nth-child(1) {
-    transform: rotate(-120deg) translate(-160px, -245px);
+    transform: rotate(-120deg) translate(-173px, -240px);
   }
 
   .home .profession-box .profession:nth-child(1) i {
     margin-right: 0;
   }
 
-  .home .profession-box .profession:nth-child(1){
+  .home .profession-box .profession:nth-child(1) {
     margin-right: 15px;
   }
-  
+
   .home .profession-box .profession:nth-child(2) {
-    transform: rotate(0deg) translate(13px, -330px);    
+    transform: rotate(0deg) translate(13px, -330px);
   }
 
   .home .profession-box .profession:nth-child(2) i {
@@ -928,9 +948,9 @@ span {
   .home .profession-box .profession:nth-child(2) h3 {
     margin-left: 0px;
   }
-  
+
   .home .profession-box .profession:nth-child(3) {
-    transform: rotate(-240deg) translate(-140px, -405px);
+    transform: rotate(-240deg) translate(-150px, -410px);
   }
 
   .contact form .input-box input {
@@ -960,4 +980,172 @@ span {
     text-align: center;
     margin-top: 2rem;
   }
+}
+
+/*--------------- styles popup-view ----------------------*/
+.services-container .popup-view {
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.751);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s ease;
+}
+
+.services-container .popup-view.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.services-container .popup-card {
+  position: relative;
+  display: flex;
+  width: 1000px;
+  height: 500px;
+  margin: 20px;
+}
+
+.services-container .popup-card .dev-img {
+  z-index: 2;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 90%;
+  transform: translateY(25px);
+}
+
+.services-container .popup-card .dev-img img {
+  z-index: 2;
+  position: relative;
+  width: 550px;
+  height: 95%;
+
+  border-radius: 2rem;
+}
+
+.services-container .popup-card .info {
+  z-index: 2;
+  background-color: var(--bg-color);
+  border-top: 0.3rem solid var(--main-color);
+  border-bottom: 0.3rem solid var(--main-color);
+  box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 3rem 2rem 4rem;
+  border-radius: 2rem;
+}
+
+.services-container .popup-card .close-btn {
+  color: #555;
+  z-index: 3;
+  position: absolute;
+  right: 0;
+  font-size: 25px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.services-container .popup-card .info h2 {
+  font-size: 3.5rem;
+  line-height: 20px;
+  margin: 20px;
+}
+
+.services-container .popup-card .info h2 span {
+  font-size: 1.7rem;
+}
+
+.services-container .popup-card .info p {
+  font-size: 15px;
+  margin: 10px;
+}
+
+@media (max-width: 900px) {
+  .services-container .popup-card {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .services-container .popup-card .dev-img {
+    z-index: 2;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 17px;
+  }
+
+  .services-container .popup-card .dev-img img {
+    max-width: 60%;
+    box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
+    margin-top: 25px;
+  }
+
+  .services-container .popup-card .info {
+    width: 70%;
+    height: auto;
+    padding: 20px;
+    box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
+    margin: auto;
+  }
+
+  .services-container .popup-card .info h2 {
+    margin: 20px 5px 5px 5px;
+    font-size: 22px;
+  }
+
+  .services-container .popup-card .info h2 span {
+    font-size: 12px;
+  }
+
+  .services-container .popup-card .info p {    
+    font-size: 12px;
+    margin-top: -30px;    
+  }
+}
+
+@media (max-width: 480px){
+  .services-container .popup-card .dev-img {    
+    width: auto;
+    height: 220px;
+    
+  }
+
+  .services-container .popup-card .dev-img img {
+    max-width: 80%;        
+  }
+
+  .services-container .popup-card .info {
+    width: 90%;
+    height: auto;
+    
+    box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
+    margin: auto;
+  }
+
+  .services-container .popup-card .info h2 {    
+    font-size: 20px;
+  }
+
+  .services-container .popup-card .info h2 span {
+    font-size: 10px;
+  }
+
+  .services-container .popup-card .info p {    
+    font-size: 10px;
+    margin-top: -30px;    
+  }
+
 }

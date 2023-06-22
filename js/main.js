@@ -76,4 +76,91 @@ ScrollReveal().reveal(
   { origin: "bottom" }
 );
 ScrollReveal().reveal(".home-content h1, .about-img img", { origin: "left" });
-ScrollReveal().reveal(".home-content h3, .home-content p, .about-content", { origin: "right" });
+ScrollReveal().reveal(".home-content h3, .home-content p, .about-content", {
+  origin: "right",
+});
+
+/*--------------------Send EmailJS------------------------*/
+const contactForm = document.querySelector("#contact-form");
+const submitBtn = document.querySelector(".btn");
+const nameInput = document.querySelector("#user-name");
+const emailInput = document.querySelector("#user-email");
+const phoneInput = document.querySelector("#user-phone");
+const subjectInput = document.querySelector("#user-subject");
+const messageInput = document.querySelector("#message");
+
+//datos que necesitamos del EmailJS
+const publicKey = "Shfc5sr8VE3Vk5ibY";
+const serviceID = "service_foth144";
+const templateID = "template_t55u8ym";
+
+//iniciamos EmailJS con la publicKey
+emailjs.init(publicKey);
+
+//creamos el evento de enviar a el formulario
+contactForm.addEventListener("submit", (e) => {
+  //prevenimos el comportamiento predeterminado
+  e.preventDefault();
+  //obtenemos todos los valores de los input
+  const inputFields = {
+    name: nameInput.value,
+    email: emailInput.value,
+    phone: phoneInput.value,
+    subject: subjectInput.value,
+    message: messageInput.value,
+  };
+  Swal.fire({
+    title: "Estas Seguro?",
+    text: "Deseas de enviar la siguiente informacion de contacto?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#0f5aa1fc",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si, Confirmar!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      emailjs.send(serviceID, templateID, inputFields).then(
+        () => {
+          nameInput.value = "";
+          emailInput.value = "";
+          phoneInput.value = "";
+          subjectInput.value = "";
+          messageInput.value = "";
+          Swal.fire(
+            "Enviada!",
+            "Su informacion se ha enviado correctamente.",
+            "success"
+          );
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
+  });
+});
+
+/*--------------------popup services------------------------*/
+const popupViews = document.querySelectorAll(".popup-view");
+const popupBtns = document.querySelectorAll(".popup-btn");
+const closeBtns = document.querySelectorAll(".close-btn");
+
+//Boton click para abrir el popup 
+const popup = function (popupClick) {
+  popupViews[popupClick].classList.add("active");
+};
+
+popupBtns.forEach((popupBtn, i) => {
+  popupBtn.addEventListener("click", () => {
+    popup(i);
+  });
+});
+
+//Boton para cerrar el popup 
+closeBtns.forEach((closeBtn) => {
+  closeBtn.addEventListener("click", () => {
+    popupViews.forEach((popupView) => {
+      popupView.classList.remove("active");
+    })
+  })
+})
