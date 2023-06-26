@@ -632,6 +632,14 @@ span {
 
 /*------------------ responsive -----------------------*/
 
+@media (max-width: 1440px){
+  .home-img img {    
+    bottom: -0.8%;    
+    width: 37%;
+    
+  }
+}
+
 @media (max-width: 1200px) {
   html {
     font-size: 50%;
@@ -660,9 +668,9 @@ span {
 
   .home-img img {
     position: absolute;
-    bottom: -21.7%;
+    bottom: -2%;
     right: 0%;
-    width: 38%;
+    width: 37%;
     pointer-events: none;
   }
 }
@@ -694,9 +702,9 @@ span {
 
   .home-img img {
     position: absolute;
-    bottom: -21.7%;
+    bottom: -2%;
     right: 0%;
-    width: 38%;
+    width: 40%;
     pointer-events: none;
   }
 }
@@ -1059,18 +1067,18 @@ span {
 }
 
 .services-container .popup-card .info h2 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   line-height: 20px;
   margin: 20px;
 }
 
 .services-container .popup-card .info h2 span {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 .services-container .popup-card .info p {
-  font-size: 15px;
-  margin: 10px;
+  font-size: 1.6rem;
+  margin-top: -5rem;  
 }
 
 @media (max-width: 900px) {
@@ -1107,12 +1115,12 @@ span {
   }
 
   .services-container .popup-card .info h2 span {
-    font-size: 12px;
+    font-size: 1.6rem;
   }
 
   .services-container .popup-card .info p {    
-    font-size: 12px;
-    margin-top: -30px;    
+    font-size: 1.6rem;
+    margin-top: -5rem;    
   }
 }
 
