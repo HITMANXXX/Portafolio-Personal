@@ -304,9 +304,9 @@ section {
 
 .home-img img {
   position: absolute;
-  bottom: -3.2%;
-  right: 0%;
-  width: 35%;
+  bottom: 0%;
+  right: -5%;
+  width: 45%;
   pointer-events: none;
 }
 
@@ -634,8 +634,8 @@ span {
 
 @media (max-width: 1440px){
   .home-img img {    
-    bottom: -0.8%;    
-    width: 37%;
+    bottom: 2%;    
+    width: 50%;
     
   }
 }
@@ -668,9 +668,9 @@ span {
 
   .home-img img {
     position: absolute;
-    bottom: -2%;
+    bottom: 15%;
     right: 0%;
-    width: 37%;
+    width: 43%;
     pointer-events: none;
   }
 }
@@ -702,9 +702,9 @@ span {
 
   .home-img img {
     position: absolute;
-    bottom: -2%;
+    bottom: 15%;
     right: 0%;
-    width: 40%;
+    width: 42%;
     pointer-events: none;
   }
 }
